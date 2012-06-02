@@ -7,6 +7,7 @@
 //
 
 #import "PLDAppDelegate.h"
+#import "PLDDataSingleton.h"
 
 @implementation PLDAppDelegate
 
@@ -15,6 +16,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    PLDDataSingleton * singleton = [PLDDataSingleton sharedInstance];
+    if ([singleton loadlastfmname] != nil) {
+        [singleton loadScrobbles];
+    }
+    [singleton loadFilteredArtists];
     return YES;
 }
 							

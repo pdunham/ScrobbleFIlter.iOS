@@ -1,72 +1,252 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1906" systemVersion="11A511" targetRuntime="iOS.CocoaTouch" nextObjectID="28" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="902"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Settings View Controller - First-->
         <scene sceneID="11">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
-                <viewController title="First" id="2" customClass="PLDFirstViewController" sceneMemberID="viewController">
+                <viewController title="First" id="2" customClass="PLDSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="20">
-                                <rect key="frame" x="54" y="98" width="212" height="43"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Uf8-Yo-iiM">
+                                <rect key="frame" x="46" y="52" width="191" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="CJR-wN-Cbg"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter your Last.fm name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="22r-hd-Efa">
+                                <rect key="frame" x="52" y="13" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" textAlignment="center" id="21">
-                                <rect key="frame" x="20" y="181" width="280" height="88"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <string key="text">Loaded by the first view controller — an instance of PLDFirstViewController — specified in the app delegate.</string>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="setting-icon.png" id="7"/>
+                    <connections>
+                        <outlet property="lastFmTextField" destination="Uf8-Yo-iiM" id="s8g-wV-StD"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
-        <scene sceneID="13">
+        <!--Tweet View Controller - Your Tweet-->
+        <scene sceneID="iWi-aA-1Oh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
-                <viewController title="Second" id="3" customClass="PLDSecondViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="17">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENP-CO-IXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="R0R-nC-FBS" customClass="PLDTweetViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JXm-GM-5h7">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="22">
-                                <rect key="frame" x="54" y="98" width="212" height="43"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" textAlignment="center" id="23">
-                                <rect key="frame" x="20" y="181" width="280" height="88"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <string key="text">Loaded by the second view controller — an instance of PLDSecondViewController — specified in the app delegate.</string>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7lx-fE-RX5">
+                                <rect key="frame" x="59" y="276" width="189" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Tweet">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tweet:" destination="R0R-nC-FBS" eventType="touchUpInside" id="n24-TB-Bnh"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="O4x-ph-Los">
+                                <rect key="frame" x="40" y="39" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Your Tweet" image="tweet.png" id="XjX-9L-1Eh"/>
+                    <connections>
+                        <outlet property="tweetButton" destination="7lx-fE-RX5" id="Djd-tz-NHw"/>
+                        <outlet property="tweetText" destination="O4x-ph-Los" id="Wja-Fj-62w"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="653" y="498"/>
+            <point key="canvasLocation" x="1193" y="-302"/>
         </scene>
+        <!--Recent Scrobbles View Controller - Second-->
+        <scene sceneID="13">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
+                <viewController title="Second" id="3" customClass="PLDRecentScrobblesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6PB-pV-58t">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="4ZT-cp-Z2h">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="vG1-Xf-p5N" kind="push" id="NJT-xh-tZQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3" id="dqZ-Is-iAC"/>
+                            <outlet property="delegate" destination="3" id="F6U-fu-3JN"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Recent" image="second" id="6"/>
+                    <navigationItem key="navigationItem" title="Recent Scrobbles" id="jqe-Gx-J3s"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="767" y="886"/>
+        </scene>
+        <!--Navigation Controller - Recent Scrobbles-->
+        <scene sceneID="8J4-gW-TfS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qw7-A1-VIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="dLN-lR-Tsc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recent Scrobbles" image="scrobble.png" id="S3f-w3-M0G"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="aFh-bR-arU">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3" kind="relationship" relationship="rootViewController" id="fRJ-Om-f72"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="281" y="886"/>
+        </scene>
+        <!--Filter Table View Controller - Filtered Artists-->
+        <scene sceneID="whX-Ee-krQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7i-Fw-Foj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="hdS-dx-17B" customClass="PLDFilterTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="10" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1kn-E8-Dre">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filteredArtist" id="8Iq-SK-MSa">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="vG1-Xf-p5N" kind="push" id="wkS-aA-k5f"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hdS-dx-17B" id="4YJ-9i-tKW"/>
+                            <outlet property="delegate" destination="hdS-dx-17B" id="kPq-YG-QsP"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Filtered Artists" id="wrh-bk-ApN"/>
+                    <navigationItem key="navigationItem" title="Filtered Artists" id="dvu-fm-5AB">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="g7Q-xG-Osk">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="wJx-do-Fot">
+                                <rect key="frame" x="5" y="12" width="18" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="infoButton" destination="g7Q-xG-Osk" id="BPq-kk-qBb"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1720" y="234"/>
+        </scene>
+        <!--Detail View Controller - Artist-->
+        <scene sceneID="zLU-4A-dnd">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1m-lu-71k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="vG1-Xf-p5N" customClass="PLDDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WJT-6r-kDD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artist name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Xfk-8J-7IH">
+                                <rect key="frame" x="58" y="53" width="123" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fec-EL-kxU">
+                                <rect key="frame" x="43" y="204" width="234" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="filterButtonPress:" destination="vG1-Xf-p5N" eventType="touchUpInside" id="GxG-Bm-8R1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Artist" id="CkF-QM-bOo"/>
+                    <connections>
+                        <outlet property="artsitLabel" destination="Xfk-8J-7IH" id="JyH-v5-WwX"/>
+                        <outlet property="filterButton" destination="fec-EL-kxU" id="cEY-4w-9iL"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1593" y="942"/>
+        </scene>
+        <!--Navigation Controller - Filter List-->
+        <scene sceneID="p95-DD-2vc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUW-a9-riB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="pXt-9e-5lh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Filter List" image="filter.png" id="Luq-QK-kHi"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Sli-cL-FqU">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hdS-dx-17B" kind="relationship" relationship="rootViewController" id="dWz-rW-Xh5"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1138" y="291"/>
+        </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -79,7 +259,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
-                        <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
+                        <segue destination="dLN-lR-Tsc" kind="relationship" relationship="viewControllers" id="VVp-mo-qyl"/>
+                        <segue destination="R0R-nC-FBS" kind="relationship" relationship="viewControllers" id="DLW-Cw-w49"/>
+                        <segue destination="pXt-9e-5lh" kind="relationship" relationship="viewControllers" id="di2-cA-SbK"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -87,12 +269,52 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
+        <image name="filter.png" width="30" height="30"/>
+        <image name="scrobble.png" width="30" height="30"/>
         <image name="second" width="16" height="16"/>
+        <image name="setting-icon.png" width="32" height="32"/>
+        <image name="tweet.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="PLDDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PLDDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="filterButtonPress:"/>
+                <relationship kind="outlet" name="artsitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="filterButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="PLDFilterTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PLDFilterTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showInfo:"/>
+                <relationship kind="outlet" name="infoButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="PLDRecentScrobblesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PLDRecentScrobblesViewController.h"/>
+        </class>
+        <class className="PLDSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PLDSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lastFmTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="PLDTweetViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PLDTweetViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tweet:"/>
+                <relationship kind="outlet" name="tweetButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tweetText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="wkS-aA-k5f"/>
+    </inferredMetricsTieBreakers>
 </document>

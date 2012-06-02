@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA7F461B156F0F7400447E2A /* PLDFilterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7F461A156F0F7400447E2A /* PLDFilterTableViewController.m */; };
+		CA84DE8F15711620007151D5 /* PLDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA84DE8E15711620007151D5 /* PLDDetailViewController.m */; };
+		CAB0B94A157AAB39000AABBA /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB0B949157AAB39000AABBA /* filter.png */; };
+		CAB0B94D157AAC39000AABBA /* scrobble.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB0B94C157AAC39000AABBA /* scrobble.png */; };
+		CAB0B94F157AAFB2000AABBA /* setting-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB0B94E157AAFB2000AABBA /* setting-icon.png */; };
+		CABC86E6156B4756006FCC5C /* PLDDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC86E5156B4756006FCC5C /* PLDDataSingleton.m */; };
+		CADD52F915747D0700C8E21A /* PLDTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CADD52F815747D0700C8E21A /* PLDTweetViewController.m */; };
+		CADD53031577999D00C8E21A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADD53021577999D00C8E21A /* Accounts.framework */; };
+		CADD5305157799A700C8E21A /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADD5304157799A700C8E21A /* Twitter.framework */; };
+		CADD530715782C0F00C8E21A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CADD530615782C0F00C8E21A /* Settings.bundle */; };
+		CADD5309157A93C100C8E21A /* scrobblefiltericon.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD5308157A93C100C8E21A /* scrobblefiltericon.png */; };
+		CADD530B157A957700C8E21A /* scrobblefiltericon.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD530A157A957700C8E21A /* scrobblefiltericon.png */; };
+		CADD530F157A9F3000C8E21A /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD530E157A9F3000C8E21A /* splash.png */; };
+		CADD5311157A9FE400C8E21A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD5310157A9FE400C8E21A /* Default.png */; };
+		CADD5313157AA8FF00C8E21A /* tweet.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD5312157AA8FF00C8E21A /* tweet.png */; };
 		CAE1B23C155F6A7D0041241E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE1B23B155F6A7D0041241E /* UIKit.framework */; };
 		CAE1B23E155F6A7D0041241E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE1B23D155F6A7D0041241E /* Foundation.framework */; };
 		CAE1B240155F6A7D0041241E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE1B23F155F6A7D0041241E /* CoreGraphics.framework */; };
@@ -14,34 +29,51 @@
 		CAE1B248155F6A7D0041241E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1B247155F6A7D0041241E /* main.m */; };
 		CAE1B24C155F6A7D0041241E /* PLDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1B24B155F6A7D0041241E /* PLDAppDelegate.m */; };
 		CAE1B24F155F6A7D0041241E /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAE1B24D155F6A7D0041241E /* MainStoryboard_iPhone.storyboard */; };
-		CAE1B252155F6A7D0041241E /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAE1B250155F6A7D0041241E /* MainStoryboard_iPad.storyboard */; };
-		CAE1B255155F6A7D0041241E /* PLDFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1B254155F6A7D0041241E /* PLDFirstViewController.m */; };
+		CAE1B255155F6A7D0041241E /* PLDSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1B254155F6A7D0041241E /* PLDSettingsViewController.m */; };
 		CAE1B257155F6A7D0041241E /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE1B256155F6A7D0041241E /* first.png */; };
 		CAE1B259155F6A7D0041241E /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE1B258155F6A7D0041241E /* first@2x.png */; };
-		CAE1B25C155F6A7D0041241E /* PLDSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1B25B155F6A7D0041241E /* PLDSecondViewController.m */; };
+		CAE1B25C155F6A7D0041241E /* PLDRecentScrobblesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE1B25B155F6A7D0041241E /* PLDRecentScrobblesViewController.m */; };
 		CAE1B25E155F6A7D0041241E /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE1B25D155F6A7D0041241E /* second.png */; };
 		CAE1B260155F6A7D0041241E /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE1B25F155F6A7D0041241E /* second@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA7F4619156F0F7400447E2A /* PLDFilterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDFilterTableViewController.h; sourceTree = "<group>"; };
+		CA7F461A156F0F7400447E2A /* PLDFilterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDFilterTableViewController.m; sourceTree = "<group>"; };
+		CA84DE8D15711620007151D5 /* PLDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDDetailViewController.h; sourceTree = "<group>"; };
+		CA84DE8E15711620007151D5 /* PLDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDDetailViewController.m; sourceTree = "<group>"; };
+		CAB0B949157AAB39000AABBA /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		CAB0B94C157AAC39000AABBA /* scrobble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrobble.png; sourceTree = "<group>"; };
+		CAB0B94E157AAFB2000AABBA /* setting-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting-icon.png"; sourceTree = "<group>"; };
+		CABC86E4156B4756006FCC5C /* PLDDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDDataSingleton.h; sourceTree = "<group>"; };
+		CABC86E5156B4756006FCC5C /* PLDDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDDataSingleton.m; sourceTree = "<group>"; };
+		CADD52F715747D0700C8E21A /* PLDTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDTweetViewController.h; sourceTree = "<group>"; };
+		CADD52F815747D0700C8E21A /* PLDTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDTweetViewController.m; sourceTree = "<group>"; };
+		CADD53021577999D00C8E21A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		CADD5304157799A700C8E21A /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		CADD530615782C0F00C8E21A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		CADD5308157A93C100C8E21A /* scrobblefiltericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrobblefiltericon.png; path = ../scrobblefiltericon.png; sourceTree = "<group>"; };
+		CADD530A157A957700C8E21A /* scrobblefiltericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrobblefiltericon.png; sourceTree = "<group>"; };
+		CADD530E157A9F3000C8E21A /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ScrobbleFIlter/splash.png; sourceTree = "<group>"; };
+		CADD5310157A9FE400C8E21A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CADD5312157AA8FF00C8E21A /* tweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweet.png; sourceTree = "<group>"; };
 		CAE1B237155F6A7D0041241E /* ScrobbleFIlter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrobbleFIlter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE1B23B155F6A7D0041241E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CAE1B23D155F6A7D0041241E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAE1B23F155F6A7D0041241E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CAE1B243155F6A7D0041241E /* ScrobbleFIlter-Info.plist */ = {isa = PBXFileReference; path = "ScrobbleFIlter-Info.plist"; sourceTree = "<group>"; };
+		CAE1B243155F6A7D0041241E /* ScrobbleFIlter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScrobbleFIlter-Info.plist"; sourceTree = "<group>"; };
 		CAE1B245155F6A7D0041241E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CAE1B247155F6A7D0041241E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CAE1B249155F6A7D0041241E /* ScrobbleFIlter-Prefix.pch */ = {isa = PBXFileReference; path = "ScrobbleFIlter-Prefix.pch"; sourceTree = "<group>"; };
-		CAE1B24A155F6A7D0041241E /* PLDAppDelegate.h */ = {isa = PBXFileReference; path = PLDAppDelegate.h; sourceTree = "<group>"; };
+		CAE1B249155F6A7D0041241E /* ScrobbleFIlter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScrobbleFIlter-Prefix.pch"; sourceTree = "<group>"; };
+		CAE1B24A155F6A7D0041241E /* PLDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLDAppDelegate.h; sourceTree = "<group>"; };
 		CAE1B24B155F6A7D0041241E /* PLDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLDAppDelegate.m; sourceTree = "<group>"; };
 		CAE1B24E155F6A7D0041241E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		CAE1B251155F6A7D0041241E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		CAE1B253155F6A7D0041241E /* PLDFirstViewController.h */ = {isa = PBXFileReference; path = PLDFirstViewController.h; sourceTree = "<group>"; };
-		CAE1B254155F6A7D0041241E /* PLDFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLDFirstViewController.m; sourceTree = "<group>"; };
+		CAE1B253155F6A7D0041241E /* PLDSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLDSettingsViewController.h; sourceTree = "<group>"; };
+		CAE1B254155F6A7D0041241E /* PLDSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLDSettingsViewController.m; sourceTree = "<group>"; };
 		CAE1B256155F6A7D0041241E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		CAE1B258155F6A7D0041241E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		CAE1B25A155F6A7D0041241E /* PLDSecondViewController.h */ = {isa = PBXFileReference; path = PLDSecondViewController.h; sourceTree = "<group>"; };
-		CAE1B25B155F6A7D0041241E /* PLDSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLDSecondViewController.m; sourceTree = "<group>"; };
+		CAE1B25A155F6A7D0041241E /* PLDRecentScrobblesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLDRecentScrobblesViewController.h; sourceTree = "<group>"; };
+		CAE1B25B155F6A7D0041241E /* PLDRecentScrobblesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLDRecentScrobblesViewController.m; sourceTree = "<group>"; };
 		CAE1B25D155F6A7D0041241E /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		CAE1B25F155F6A7D0041241E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADD5305157799A700C8E21A /* Twitter.framework in Frameworks */,
+				CADD53031577999D00C8E21A /* Accounts.framework in Frameworks */,
 				CAE1B23C155F6A7D0041241E /* UIKit.framework in Frameworks */,
 				CAE1B23E155F6A7D0041241E /* Foundation.framework in Frameworks */,
 				CAE1B240155F6A7D0041241E /* CoreGraphics.framework in Frameworks */,
@@ -63,6 +97,10 @@
 		CAE1B22C155F6A7D0041241E = {
 			isa = PBXGroup;
 			children = (
+				CADD5310157A9FE400C8E21A /* Default.png */,
+				CADD530E157A9F3000C8E21A /* splash.png */,
+				CADD530A157A957700C8E21A /* scrobblefiltericon.png */,
+				CADD5308157A93C100C8E21A /* scrobblefiltericon.png */,
 				CAE1B241155F6A7D0041241E /* ScrobbleFIlter */,
 				CAE1B23A155F6A7D0041241E /* Frameworks */,
 				CAE1B238155F6A7D0041241E /* Products */,
@@ -80,6 +118,8 @@
 		CAE1B23A155F6A7D0041241E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CADD53021577999D00C8E21A /* Accounts.framework */,
+				CADD5304157799A700C8E21A /* Twitter.framework */,
 				CAE1B23B155F6A7D0041241E /* UIKit.framework */,
 				CAE1B23D155F6A7D0041241E /* Foundation.framework */,
 				CAE1B23F155F6A7D0041241E /* CoreGraphics.framework */,
@@ -90,19 +130,31 @@
 		CAE1B241155F6A7D0041241E /* ScrobbleFIlter */ = {
 			isa = PBXGroup;
 			children = (
+				CADD530615782C0F00C8E21A /* Settings.bundle */,
 				CAE1B24A155F6A7D0041241E /* PLDAppDelegate.h */,
 				CAE1B24B155F6A7D0041241E /* PLDAppDelegate.m */,
 				CAE1B24D155F6A7D0041241E /* MainStoryboard_iPhone.storyboard */,
-				CAE1B250155F6A7D0041241E /* MainStoryboard_iPad.storyboard */,
-				CAE1B253155F6A7D0041241E /* PLDFirstViewController.h */,
-				CAE1B254155F6A7D0041241E /* PLDFirstViewController.m */,
+				CAB0B94E157AAFB2000AABBA /* setting-icon.png */,
+				CAB0B94C157AAC39000AABBA /* scrobble.png */,
+				CAB0B949157AAB39000AABBA /* filter.png */,
+				CADD5312157AA8FF00C8E21A /* tweet.png */,
+				CADD52F715747D0700C8E21A /* PLDTweetViewController.h */,
+				CADD52F815747D0700C8E21A /* PLDTweetViewController.m */,
+				CA84DE8D15711620007151D5 /* PLDDetailViewController.h */,
+				CA84DE8E15711620007151D5 /* PLDDetailViewController.m */,
+				CAE1B253155F6A7D0041241E /* PLDSettingsViewController.h */,
+				CAE1B254155F6A7D0041241E /* PLDSettingsViewController.m */,
 				CAE1B256155F6A7D0041241E /* first.png */,
 				CAE1B258155F6A7D0041241E /* first@2x.png */,
-				CAE1B25A155F6A7D0041241E /* PLDSecondViewController.h */,
-				CAE1B25B155F6A7D0041241E /* PLDSecondViewController.m */,
+				CAE1B25A155F6A7D0041241E /* PLDRecentScrobblesViewController.h */,
+				CAE1B25B155F6A7D0041241E /* PLDRecentScrobblesViewController.m */,
+				CABC86E4156B4756006FCC5C /* PLDDataSingleton.h */,
+				CABC86E5156B4756006FCC5C /* PLDDataSingleton.m */,
 				CAE1B25D155F6A7D0041241E /* second.png */,
 				CAE1B25F155F6A7D0041241E /* second@2x.png */,
 				CAE1B242155F6A7D0041241E /* Supporting Files */,
+				CA7F4619156F0F7400447E2A /* PLDFilterTableViewController.h */,
+				CA7F461A156F0F7400447E2A /* PLDFilterTableViewController.m */,
 			);
 			path = ScrobbleFIlter;
 			sourceTree = "<group>";
@@ -171,11 +223,19 @@
 			files = (
 				CAE1B246155F6A7D0041241E /* InfoPlist.strings in Resources */,
 				CAE1B24F155F6A7D0041241E /* MainStoryboard_iPhone.storyboard in Resources */,
-				CAE1B252155F6A7D0041241E /* MainStoryboard_iPad.storyboard in Resources */,
 				CAE1B257155F6A7D0041241E /* first.png in Resources */,
 				CAE1B259155F6A7D0041241E /* first@2x.png in Resources */,
 				CAE1B25E155F6A7D0041241E /* second.png in Resources */,
 				CAE1B260155F6A7D0041241E /* second@2x.png in Resources */,
+				CADD530715782C0F00C8E21A /* Settings.bundle in Resources */,
+				CADD5309157A93C100C8E21A /* scrobblefiltericon.png in Resources */,
+				CADD530B157A957700C8E21A /* scrobblefiltericon.png in Resources */,
+				CADD530F157A9F3000C8E21A /* splash.png in Resources */,
+				CADD5311157A9FE400C8E21A /* Default.png in Resources */,
+				CADD5313157AA8FF00C8E21A /* tweet.png in Resources */,
+				CAB0B94A157AAB39000AABBA /* filter.png in Resources */,
+				CAB0B94D157AAC39000AABBA /* scrobble.png in Resources */,
+				CAB0B94F157AAFB2000AABBA /* setting-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,8 +248,12 @@
 			files = (
 				CAE1B248155F6A7D0041241E /* main.m in Sources */,
 				CAE1B24C155F6A7D0041241E /* PLDAppDelegate.m in Sources */,
-				CAE1B255155F6A7D0041241E /* PLDFirstViewController.m in Sources */,
-				CAE1B25C155F6A7D0041241E /* PLDSecondViewController.m in Sources */,
+				CAE1B255155F6A7D0041241E /* PLDSettingsViewController.m in Sources */,
+				CAE1B25C155F6A7D0041241E /* PLDRecentScrobblesViewController.m in Sources */,
+				CABC86E6156B4756006FCC5C /* PLDDataSingleton.m in Sources */,
+				CA7F461B156F0F7400447E2A /* PLDFilterTableViewController.m in Sources */,
+				CA84DE8F15711620007151D5 /* PLDDetailViewController.m in Sources */,
+				CADD52F915747D0700C8E21A /* PLDTweetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,14 +274,6 @@
 				CAE1B24E155F6A7D0041241E /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		CAE1B250155F6A7D0041241E /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CAE1B251155F6A7D0041241E /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -273,10 +329,15 @@
 		CAE1B264155F6A7D0041241E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScrobbleFIlter/ScrobbleFIlter-Prefix.pch";
 				INFOPLIST_FILE = "ScrobbleFIlter/ScrobbleFIlter-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -284,10 +345,15 @@
 		CAE1B265155F6A7D0041241E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScrobbleFIlter/ScrobbleFIlter-Prefix.pch";
 				INFOPLIST_FILE = "ScrobbleFIlter/ScrobbleFIlter-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -311,6 +377,7 @@
 				CAE1B265155F6A7D0041241E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
