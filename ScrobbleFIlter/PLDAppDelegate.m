@@ -13,10 +13,12 @@
 
 @synthesize window = _window;
 
+PLDDataSingleton * singleton;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    PLDDataSingleton * singleton = [PLDDataSingleton sharedInstance];
+    singleton = [PLDDataSingleton sharedInstance];
     if ([singleton loadlastfmname] != nil) {
         [singleton loadScrobbles];
     }

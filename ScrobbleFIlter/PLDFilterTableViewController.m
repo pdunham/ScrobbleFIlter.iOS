@@ -32,16 +32,10 @@ PLDDataSingleton * singleton;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    // read "foo.plist" from application bundle
     singleton = [PLDDataSingleton sharedInstance];
     filteredArtists =  [[NSMutableArray alloc] initWithArray:[singleton.filteredArtists allObjects]];
+    NSLog(@"current tab bar index: %d", [self.tabBarController selectedIndex]);
+
 }
 
 - (void)viewDidUnload
@@ -159,6 +153,7 @@ PLDDataSingleton * singleton;
     NSLog(@"info button clicked");
     UIActionSheet *msg = [[UIActionSheet alloc] 
                           initWithTitle:@"These artists will not appear in your recent scrobbles.\n"
+                          "Click the artist name to go to another screen to remove them from your filter.\n"
                           delegate:nil 
                           cancelButtonTitle:nil  destructiveButtonTitle:nil 
                           otherButtonTitles:@"Okay", nil];

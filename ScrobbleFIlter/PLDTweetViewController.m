@@ -16,6 +16,7 @@
 @implementation PLDTweetViewController
 @synthesize tweetButton;
 @synthesize tweetText;
+@synthesize splashImage;
 
 PLDDataSingleton *singleton;
 NSString * tweet;
@@ -32,13 +33,27 @@ NSString * tweet;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotNotification:) name:@"mobi.uchicago.scrobblefilter.download" object:nil];
+    NSLog(@"registered for notification");
+    NSLog(@"current tab bar index: %d", [self.tabBarController selectedIndex]);
+
+}
+
+- (void)gotNotification:(NSNotification *)notif {
+    
+    NSLog(@">>>> Notification Center Recieved:");
+    
+    // Update UI; needs be on main thread
+//    [self performSelectorOnMainThread:@selector(composeTweet:) withObject:nil waitUntilDone:YES];
     [self composeTweet];
+    [self.splashImage setHidden:YES];
 }
 
 - (void)viewDidUnload
 {
     [self setTweetButton:nil];
     [self setTweetText:nil];
+    [self setSplashImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -49,10 +64,12 @@ NSString * tweet;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [self composeTweet];
+    if (singleton.scrobbledArtists != nil) 
+        [self composeTweet];
 }
 
 -(void) composeTweet {
+    NSLog(@"composing tweet");
     singleton = [PLDDataSingleton sharedInstance];
     NSArray *topThree = [singleton topThree];
     NSDictionary *scrobbleOne = (NSDictionary*)[topThree objectAtIndex:0];
@@ -62,7 +79,7 @@ NSString * tweet;
     id artistTwo = [scrobbleTwo valueForKey:@"name"];
     id artistThree = [scrobbleThree valueForKey:@"name"];
     
-    tweet =  [NSString stringWithFormat:@"I've been listening to %@, %@, and %@",artistOne, artistTwo, artistThree]; 
+    tweet =  [NSString stringWithFormat:@"I've been listening to %@, %@, and %@.",artistOne, artistTwo, artistThree]; 
     self.tweetText.text = tweet;
 
 }
@@ -107,10 +124,23 @@ NSString * tweet;
                     NSLog(@"%@", [urlResponse allHeaderFields]);
 					[self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
 				}];
-			}
+			} else {
+                [self launchAlert];
+            }
         }
 	}];
 }
+
+-(void) launchAlert {
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Twitter Account required!" 
+                                                 message:@"You need a Twitter account set up on your phone to use this feature." 
+                                                delegate:self
+                                       cancelButtonTitle:@"OK" 
+                                       otherButtonTitles:nil];
+    [av show];
+    
+}
+
 
 - (void)displayText:(NSString *)text {
 	self.tweetText.text = text;

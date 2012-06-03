@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface PLDSettingsViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *lastFmTextField;
 @property (strong, nonatomic) NSMutableArray *scrobbledArtists;
+@property (strong, nonatomic) IBOutlet UIPickerView *accountPicker;
 
 @end

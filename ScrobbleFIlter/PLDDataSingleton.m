@@ -51,14 +51,9 @@
             
             
             self.scrobbledArtists = [NSMutableArray arrayWithArray:[[results objectForKey:@"topartists"] objectForKey:@"artist"]];
-            // Process the results (i.e. conver the NSDictionary into an NSArray that will be read by the UITableView dataSource)
-            // 
-            
-            NSLog(@"here's the array: %@",scrobbledArtists);
-            PLDDataSingleton *singleton = [PLDDataSingleton sharedInstance];
-            singleton.scrobbledArtists = scrobbledArtists;
-            
-            // Reload the table
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"mobi.uchicago.scrobblefilter.download" object:scrobbledArtists];
+            NSLog(@"posted download notification");
+
         });
     });
     
@@ -71,6 +66,7 @@
     NSMutableArray *filteredArtistsArray = [NSMutableArray arrayWithContentsOfFile:finalPath ];
     NSLog(@"reading from file");
     // dump the contents of the dictionary to the console
+    NSLog(@"logging filtered artists");
     for (id artist in filteredArtists) {
         NSLog(@"artist: %@", artist);
     }

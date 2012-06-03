@@ -16,6 +16,7 @@
 @implementation PLDSettingsViewController
 @synthesize lastFmTextField;
 @synthesize scrobbledArtists;
+@synthesize accountPicker;
 
 PLDDataSingleton *singleton;
 
@@ -24,12 +25,15 @@ PLDDataSingleton *singleton;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     singleton = [PLDDataSingleton sharedInstance];
-    [self loadlastfmname];
+    lastFmTextField.text = [singleton loadlastfmname];
+    
+    
 }
 
 - (void)viewDidUnload
 {
     [self setLastFmTextField:nil];
+    [self setAccountPicker:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

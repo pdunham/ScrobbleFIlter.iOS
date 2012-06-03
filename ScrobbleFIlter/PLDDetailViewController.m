@@ -42,6 +42,7 @@ PLDDataSingleton * singleton;
     } else {
         [filterButton setTitle:@"filter" forState:UIControlStateNormal ];
     }
+    NSLog(@"current tab bar index: %d", [self.tabBarController selectedIndex]);
 
 }
 

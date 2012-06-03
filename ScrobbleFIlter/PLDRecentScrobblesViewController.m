@@ -28,6 +28,8 @@ PLDDataSingleton * singleton;
     scrobbleArtists = [singleton filterScrobbles] ;  
     NSLog(@"recent artists view loaded");
     NSLog(@"scrobbled artists has %d items", [scrobbleArtists count] );
+    NSLog(@"current tab bar index: %d", [self.tabBarController selectedIndex]);
+
 }
 
 - (void)viewDidUnload
