@@ -5,6 +5,7 @@
 //  Created by Phillip Dunham on 5/12/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
+// A fairly standard app delegate - most of the data is handled by a singleton object, so that object is loaded first thing, and methods to populate it are called
 
 #import "PLDAppDelegate.h"
 #import "PLDDataSingleton.h"
@@ -18,6 +19,7 @@ PLDDataSingleton * singleton;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // when the app launches we wnat to try to load all the data we need,so we instantiate the singleton and call methods to populate data
     singleton = [PLDDataSingleton sharedInstance];
     if ([singleton loadlastfmname] != nil) {
         [singleton loadScrobbles];
