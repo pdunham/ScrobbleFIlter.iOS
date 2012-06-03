@@ -49,6 +49,9 @@ PLDDataSingleton * singleton;
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    if (singleton.downloadFailed) {
+        [singleton loadScrobbles];
+    }
     scrobbleArtists = [singleton filterScrobbles];
     [self.tableView reloadData];
 }

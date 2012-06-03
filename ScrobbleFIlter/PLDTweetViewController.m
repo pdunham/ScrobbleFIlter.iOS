@@ -17,6 +17,7 @@
 @synthesize tweetButton;
 @synthesize tweetText;
 @synthesize splashImage;
+@synthesize statusLabel;
 
 PLDDataSingleton *singleton;
 NSString * tweet;
@@ -33,18 +34,24 @@ NSString * tweet;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    singleton = [PLDDataSingleton sharedInstance];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotNotification:) name:@"mobi.uchicago.scrobblefilter.download" object:nil];
-    NSLog(@"registered for notification");
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotErrorNotification:) name:@"mobi.uchicago.scrobblefilter.fail" object:nil];
+    NSLog(@"registered for notifications");
     NSLog(@"current tab bar index: %d", [self.tabBarController selectedIndex]);
+    if (singleton.downloadFailed) [self gotErrorNotification:nil];
+}
 
+-(void)gotErrorNotification:(NSNotification *)notif {
+    NSLog(@">>>> Error Notification Recieved:");
+    self.tweetText.text = @"Could not communicate with Last.fm to get scrobbles.\nCheck your network connectivity.";
+    [self.tweetButton setEnabled:NO];
+    [self.splashImage setHidden:YES];
 }
 
 - (void)gotNotification:(NSNotification *)notif {
     
     NSLog(@">>>> Notification Center Recieved:");
-    
-    // Update UI; needs be on main thread
-//    [self performSelectorOnMainThread:@selector(composeTweet:) withObject:nil waitUntilDone:YES];
     [self composeTweet];
     [self.splashImage setHidden:YES];
 }
@@ -54,6 +61,7 @@ NSString * tweet;
     [self setTweetButton:nil];
     [self setTweetText:nil];
     [self setSplashImage:nil];
+    [self setStatusLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -71,16 +79,26 @@ NSString * tweet;
 -(void) composeTweet {
     NSLog(@"composing tweet");
     singleton = [PLDDataSingleton sharedInstance];
-    NSArray *topThree = [singleton topThree];
-    NSDictionary *scrobbleOne = (NSDictionary*)[topThree objectAtIndex:0];
-    NSDictionary *scrobbleTwo = (NSDictionary*)[topThree objectAtIndex:1];
-    NSDictionary *scrobbleThree = (NSDictionary*)[topThree objectAtIndex:2];
-    id artistOne = [scrobbleOne valueForKey:@"name"];
-    id artistTwo = [scrobbleTwo valueForKey:@"name"];
-    id artistThree = [scrobbleThree valueForKey:@"name"];
-    
-    tweet =  [NSString stringWithFormat:@"I've been listening to %@, %@, and %@.",artistOne, artistTwo, artistThree]; 
-    self.tweetText.text = tweet;
+    if (singleton.downloadFailed) [self gotErrorNotification:nil];
+    else {
+        NSArray *topThree = [singleton topThree];
+        id artistOne, artistTwo, artistThree;
+        if ([topThree count] > 0) { 
+            NSDictionary *scrobbleOne = (NSDictionary*)[topThree objectAtIndex:0];
+            artistOne = [scrobbleOne valueForKey:@"name"];
+        }
+        if ([topThree count] > 1) { 
+            NSDictionary *scrobbleTwo = (NSDictionary*)[topThree objectAtIndex:1];
+            artistTwo = [scrobbleTwo valueForKey:@"name"];
+        }    
+        if ([topThree count] > 1) { 
+            NSDictionary *scrobbleThree = (NSDictionary*)[topThree objectAtIndex:2];
+            artistThree = [scrobbleThree valueForKey:@"name"];
+        }
+        tweet =  [NSString stringWithFormat:@"I've been listening to %@, %@, and %@.",artistOne, artistTwo, artistThree]; 
+        self.tweetText.text = tweet;
+        [self.tweetButton setEnabled:YES];
+    }
 
 }
 
@@ -121,8 +139,9 @@ NSString * tweet;
 				// Perform the request created above and create a handler block to handle the response.
 				[postRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
 					NSString *output = [NSString stringWithFormat:@"HTTP response status: %i", [urlResponse statusCode]];
+                    NSLog(@"%@",output);
                     NSLog(@"%@", [urlResponse allHeaderFields]);
-					[self performSelectorOnMainThread:@selector(displayText:) withObject:output waitUntilDone:NO];
+					[self performSelectorOnMainThread:@selector(displayStatus:) withObject:urlResponse waitUntilDone:NO];
 				}];
 			} else {
                 [self launchAlert];
@@ -142,8 +161,14 @@ NSString * tweet;
 }
 
 
-- (void)displayText:(NSString *)text {
-	self.tweetText.text = text;
+- (void)displayStatus:(NSHTTPURLResponse *)httpResponse {
+    if ([httpResponse statusCode] == 200) {
+        self.statusLabel.text = @"tweeted successfully";
+        [self.statusLabel setTextColor:[UIColor blueColor]];
+    } else {
+        self.statusLabel.text = @"tweet failed";
+        [self.statusLabel setTextColor:[UIColor redColor]];
+    }
 }
 
 @end

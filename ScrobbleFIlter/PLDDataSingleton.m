@@ -10,7 +10,7 @@
 
 @implementation PLDDataSingleton
 
-@synthesize scrobbledArtists, filteredArtists;
+@synthesize scrobbledArtists, filteredArtists, isLastFmNameValid, downloadFailed;
 
 /*******************************************************************************
  * @method          sharedInstance
@@ -29,6 +29,7 @@
 -(NSString *) loadlastfmname {
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     NSString *lastfmname = [settings objectForKey:@"lastfmname"];
+    isLastFmNameValid = ( lastfmname != nil );
     return lastfmname;
 }
 
@@ -40,17 +41,24 @@
     NSURL *url=[NSURL URLWithString:urlString];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^{
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        
+        NSError *error = nil;
+        NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+        if (data==nil) {
+            NSLog(@"%@", error);
+            downloadFailed = YES;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"mobi.uchicago.scrobblefilter.fail" object:error];
+            NSLog(@"sent failure notification");
+        } else
         dispatch_async(dispatch_get_main_queue(),^{
-            NSError *error = nil;
-            NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            NSError *error2 = nil;
+            NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error2];
             //NSLog(@"Json as NSDictionary: %@",results);
             NSLog(@"done loading raw json file");
             //NSLog(@"%@", [[results objectForKey:@"topartists"] objectForKey:@"artist"]  );
             
             
             self.scrobbledArtists = [NSMutableArray arrayWithArray:[[results objectForKey:@"topartists"] objectForKey:@"artist"]];
+            downloadFailed = NO;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"mobi.uchicago.scrobblefilter.download" object:scrobbledArtists];
             NSLog(@"posted download notification");
 
@@ -119,7 +127,7 @@
     
     NSArray *filteredList = [self filterScrobbles];
     NSMutableArray *topThree = [[NSMutableArray alloc] initWithCapacity:3];
-    for (int i = 0 ; i < 3; i++) {
+    for (int i = 0 ; [filteredList count] > (i+1) &&  i < 3; i++) {
         [topThree addObject: [filteredList objectAtIndex:i]];
     }
     return topThree;

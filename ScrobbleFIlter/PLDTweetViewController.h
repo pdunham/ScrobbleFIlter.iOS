@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *tweetButton;
 @property (strong, nonatomic) IBOutlet UITextView *tweetText;
 @property (strong, nonatomic) IBOutlet UIImageView *splashImage;
+@property (strong, nonatomic) IBOutlet UILabel *statusLabel;
 - (IBAction)tweet:(id)sender;
 @end

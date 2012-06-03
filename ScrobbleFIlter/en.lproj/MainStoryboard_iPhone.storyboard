@@ -77,12 +77,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Xt1-jE-bNl">
+                                <rect key="frame" x="65" y="224" width="183" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Your Tweet" image="tweet.png" id="XjX-9L-1Eh"/>
                     <connections>
                         <outlet property="splashImage" destination="aYO-ID-ESj" id="vqg-v8-sb1"/>
+                        <outlet property="statusLabel" destination="Xt1-jE-bNl" id="Wje-NJ-rpf"/>
                         <outlet property="tweetButton" destination="7lx-fE-RX5" id="Djd-tz-NHw"/>
                         <outlet property="tweetText" destination="O4x-ph-Los" id="Wja-Fj-62w"/>
                     </connections>
@@ -315,6 +323,7 @@
             <relationships>
                 <relationship kind="action" name="tweet:"/>
                 <relationship kind="outlet" name="splashImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tweetButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tweetText" candidateClass="UITextView"/>
             </relationships>

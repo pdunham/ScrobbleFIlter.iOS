@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) NSMutableArray *scrobbledArtists;
 @property (strong, nonatomic) NSMutableSet *filteredArtists;
+@property bool isLastFmNameValid;
+@property bool downloadFailed;
 
 // Methods
 + (id)sharedInstance;
