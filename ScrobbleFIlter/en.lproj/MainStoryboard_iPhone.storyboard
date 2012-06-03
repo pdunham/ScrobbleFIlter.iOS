@@ -201,13 +201,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artist name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Xfk-8J-7IH">
-                                <rect key="frame" x="58" y="53" width="123" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fec-EL-kxU">
                                 <rect key="frame" x="43" y="204" width="234" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -223,12 +216,22 @@
                                     <action selector="filterButtonPress:" destination="vG1-Xf-p5N" eventType="touchUpInside" id="GxG-Bm-8R1"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="9dX-i8-oVJ">
+                                <rect key="frame" x="43" y="34" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WJT-6r-kDD" id="Nw9-cG-RHc"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Artist" id="CkF-QM-bOo"/>
                     <connections>
-                        <outlet property="artsitLabel" destination="Xfk-8J-7IH" id="JyH-v5-WwX"/>
+                        <outlet property="artistTextView" destination="9dX-i8-oVJ" id="u5h-MR-rXv"/>
                         <outlet property="filterButton" destination="fec-EL-kxU" id="cEY-4w-9iL"/>
                     </connections>
                 </viewController>
@@ -286,7 +289,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PLDDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="filterButtonPress:"/>
-                <relationship kind="outlet" name="artsitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="artistTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="filterButton" candidateClass="UIButton"/>
             </relationships>
         </class>

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PLDDetailViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *artsitLabel;
+@property (strong, nonatomic) IBOutlet UITextView *artistTextView;
 @property (strong, nonatomic) IBOutlet UIButton *filterButton;
 @property (weak, nonatomic) NSString *artistName;
 

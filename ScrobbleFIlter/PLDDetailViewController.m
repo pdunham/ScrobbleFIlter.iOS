@@ -14,7 +14,7 @@
 @end
 
 @implementation PLDDetailViewController
-@synthesize artsitLabel;
+@synthesize artistTextView;
 @synthesize filterButton;
 @synthesize artistName;
 
@@ -34,13 +34,14 @@ PLDDataSingleton * singleton;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     singleton = [PLDDataSingleton sharedInstance];
-    artsitLabel.text = artistName;
+    artistTextView.text = artistName;
     if ([singleton.filteredArtists containsObject:artistName]) {
         
         [filterButton setTitle:@"unfilter" forState:UIControlStateNormal ] ;
-       
+        [artistTextView setTextColor: [UIColor redColor]]; 
     } else {
         [filterButton setTitle:@"filter" forState:UIControlStateNormal ];
+        [artistTextView setTextColor: [UIColor blueColor]]; 
     }
     NSLog(@"current tab bar index: %d", [self.tabBarController selectedIndex]);
 
@@ -48,8 +49,8 @@ PLDDataSingleton * singleton;
 
 - (void)viewDidUnload
 {
-    [self setArtsitLabel:nil];
     [self setFilterButton:nil];
+    [self setArtistTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -63,10 +64,14 @@ PLDDataSingleton * singleton;
     
     if ([singleton.filteredArtists containsObject:artistName]) {
         [singleton.filteredArtists removeObject:artistName];
-        [filterButton setTitle:@"filter" forState:UIControlStateNormal ];    
+        [filterButton setTitle:@"filter" forState:UIControlStateNormal ];
+        [artistTextView setTextColor: [UIColor blueColor]]; 
+
     } else {
         [singleton.filteredArtists addObject:artistName];
         [filterButton setTitle:@"unfilter" forState:UIControlStateNormal ];
+        [artistTextView setTextColor: [UIColor redColor]]; 
+
     }
     [singleton storeFilteredArtists];
     
