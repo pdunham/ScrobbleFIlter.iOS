@@ -5,6 +5,9 @@
 //  Created by Phillip Dunham on 5/12/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
+//  A Table View controller used to display a list of artists recently scrobbled by the user. 
+//  The list is filtered to remove any artists from the user's list of filtered artists  
+//  most data operations are handled by the dingleton class PLDDataSingleton 
 
 #import "PLDRecentScrobblesViewController.h"
 #import "PLDDataSingleton.h"
@@ -23,7 +26,7 @@ PLDDataSingleton * singleton;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// get the singleton, and the list of scrobbles 
     singleton = [PLDDataSingleton sharedInstance];
     scrobbleArtists = [singleton filterScrobbles] ;  
     NSLog(@"recent artists view loaded");
@@ -49,7 +52,11 @@ PLDDataSingleton * singleton;
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    // the list of scrobbles may have changed since the last time the table was viewed, so we will try to update whenever the view is re-displayed
     if (singleton.downloadFailed) {
+        // download would have failed due to network not being available.
+        // maybe it's back now?  this is the point where we try again.
+        // scrobbles may not load here (due to threading issues), but will appear next time the view is redisplayed
         [singleton loadScrobbles];
     }
     scrobbleArtists = [singleton filterScrobbles];
@@ -74,18 +81,14 @@ PLDDataSingleton * singleton;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //straightforward table cell population based on scrobbledArtist array
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    //if (cell == nil) [cell initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     // Configure the cell...
     NSLog(@"Working on cell:%d",indexPath.row);
     NSDictionary *artist = [self.scrobbleArtists objectAtIndex:indexPath.row];
     cell.textLabel.text = [artist objectForKey:@"name"];
     cell.editingAccessoryType = UITableViewCellAccessoryCheckmark;
-  //  cell.textLabel.text  = [NSString stringWithFormat:@"%@: %@",  [tweet objectForKey:@"from_user"],[tweet objectForKey:@"created_at"]];
-//    NSString *imageURL = [tweet objectForKey:@"profile_image_url"];
- //   NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:imageURL]];
-   // cell.imageView.image = [UIImage imageWithData: imageData];
     return cell;
 }
 

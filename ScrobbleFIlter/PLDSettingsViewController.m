@@ -5,6 +5,8 @@
 //  Created by Phillip Dunham on 5/12/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
+// THis is the view controller where the user handles settings - at first just the user's last.fm account name
+// THis class is a UITextFieldDelegate in order to handle the text input field for the last fm user name
 
 #import "PLDSettingsViewController.h"
 #import "PLDDataSingleton.h"
