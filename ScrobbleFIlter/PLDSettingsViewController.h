@@ -14,5 +14,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *lastFmTextField;
 @property (strong, nonatomic) NSMutableArray *scrobbledArtists;
 @property (strong, nonatomic) IBOutlet UIPickerView *accountPicker;
+@property (strong, nonatomic) IBOutlet UISwitch *randomSwitch;
 
+- (IBAction)randomSwitchValueChanged:(id)sender;
 @end

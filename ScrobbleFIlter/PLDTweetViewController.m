@@ -106,6 +106,7 @@ NSString * tweet;
     // scrobbles may have been updated since the view last appeared, so we will attempt to compose an updated tweet if scrobbles are available
     if (singleton.scrobbledArtists != nil) 
         [self composeTweet];
+    self.statusLabel.text = @"";
 }
 
 /*******************************************************************************

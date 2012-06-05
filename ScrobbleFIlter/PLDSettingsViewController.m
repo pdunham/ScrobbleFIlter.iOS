@@ -19,6 +19,7 @@
 @synthesize lastFmTextField;
 @synthesize scrobbledArtists;
 @synthesize accountPicker;
+@synthesize randomSwitch;
 
 PLDDataSingleton *singleton;
 
@@ -30,13 +31,21 @@ PLDDataSingleton *singleton;
     singleton = [PLDDataSingleton sharedInstance];
     lastFmTextField.text = [singleton loadlastfmname];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotNotification:) name:@"mobi.uchicago.scrobblefilter.usercheck" object:nil];
+    randomSwitch.on =  [[[NSUserDefaults standardUserDefaults] objectForKey:@"Random"] boolValue]; 
+    NSLog(@"stored lastfm user name");
+}
 
+-(void)viewDidAppear:(BOOL)animated {
+    lastFmTextField.text = [singleton loadlastfmname];
+    randomSwitch.on =  [[[NSUserDefaults standardUserDefaults] objectForKey:@"Random"] boolValue]; 
+    
 }
 
 - (void)viewDidUnload
 {
     [self setLastFmTextField:nil];
     [self setAccountPicker:nil];
+    [self setRandomSwitch:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -160,5 +169,16 @@ PLDDataSingleton *singleton;
 
 }
 
-
+/*******************************************************************************
+ * @method randomSwitchValueChanged  
+ * @abstract handles event of randomSwitch value changing   
+ * @description  will take the current value of the random switch and write it to user default settings.  This Value controls whether or not the 3 artists included in the tweet are the top 3 or a random 3. 
+ *******************************************************************************/
+- (IBAction)randomSwitchValueChanged:(id)sender {
+    
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults]; 
+    NSNumber * val = [[NSNumber alloc] initWithBool:randomSwitch.on];
+    [settings setObject:val forKey:@"Random"];
+    [settings synchronize];
+    NSLog(@"stored random switch value");}
 @end

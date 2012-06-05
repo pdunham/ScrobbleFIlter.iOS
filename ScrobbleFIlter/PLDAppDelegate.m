@@ -43,10 +43,15 @@ PLDDataSingleton * singleton;
         NSString *datestring = [NSString stringWithFormat:@"%@",[NSDate date]];
         [defaults setObject:datestring forKey:@"Initial Run"];
         [defaults synchronize];
-        // Set your intial preferences in a .plist
     }
     NSLog(@"NSUserDefaults: %@", [[NSUserDefaults standardUserDefaults]
                                   dictionaryRepresentation]);
+    if ([[defaults objectForKey:@"Random"] boolValue]) {
+        NSLog(@"user chose random");
+    } else {
+        NSLog(@"use top 3");
+    }
+    NSLog(@"%@", [[defaults objectForKey:@"Random"] class] );
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

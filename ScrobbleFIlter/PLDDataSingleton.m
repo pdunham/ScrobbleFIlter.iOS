@@ -14,6 +14,8 @@
 //
 
 #import "PLDDataSingleton.h"
+#import "NSArray+Shuffle.h"
+
 
 @implementation PLDDataSingleton
 
@@ -168,6 +170,11 @@
 -(NSArray *) topThree   {
     
     NSArray *filteredList = [self filterScrobbles];
+    if ( [[[NSUserDefaults standardUserDefaults] objectForKey:@"Random"] boolValue] ) {
+        NSLog(@"we're going random");
+        filteredList = [filteredList shuffle];
+    }
+    
     NSMutableArray *topThree = [[NSMutableArray alloc] initWithCapacity:3];
     for (int i = 0 ; [filteredList count] > (i+1) &&  i < 3; i++) {
         [topThree addObject: [filteredList objectAtIndex:i]];

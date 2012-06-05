@@ -10,6 +10,7 @@
 		CA79720B157DB755000BC537 /* hi-res-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA79720A157DB755000BC537 /* hi-res-icon.png */; };
 		CA79720E157DB945000BC537 /* hi-res-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA79720D157DB945000BC537 /* hi-res-icon.png */; };
 		CA797210157DB959000BC537 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA79720F157DB959000BC537 /* Default@2x.png */; };
+		CA797219157DC05C000BC537 /* NSArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = CA797218157DC05C000BC537 /* NSArray+Shuffle.m */; };
 		CA7F461B156F0F7400447E2A /* PLDFilterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7F461A156F0F7400447E2A /* PLDFilterTableViewController.m */; };
 		CA84DE8F15711620007151D5 /* PLDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA84DE8E15711620007151D5 /* PLDDetailViewController.m */; };
 		CAB0B94A157AAB39000AABBA /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB0B949157AAB39000AABBA /* filter.png */; };
@@ -44,6 +45,8 @@
 		CA79720A157DB755000BC537 /* hi-res-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hi-res-icon.png"; sourceTree = "<group>"; };
 		CA79720D157DB945000BC537 /* hi-res-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hi-res-icon.png"; sourceTree = "<group>"; };
 		CA79720F157DB959000BC537 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CA797217157DC05C000BC537 /* NSArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shuffle.h"; sourceTree = "<group>"; };
+		CA797218157DC05C000BC537 /* NSArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shuffle.m"; sourceTree = "<group>"; };
 		CA7F4619156F0F7400447E2A /* PLDFilterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDFilterTableViewController.h; sourceTree = "<group>"; };
 		CA7F461A156F0F7400447E2A /* PLDFilterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDFilterTableViewController.m; sourceTree = "<group>"; };
 		CA84DE8D15711620007151D5 /* PLDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDDetailViewController.h; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 		CAE1B22C155F6A7D0041241E = {
 			isa = PBXGroup;
 			children = (
+				CA797217157DC05C000BC537 /* NSArray+Shuffle.h */,
+				CA797218157DC05C000BC537 /* NSArray+Shuffle.m */,
 				CA79720F157DB959000BC537 /* Default@2x.png */,
 				CA79720D157DB945000BC537 /* hi-res-icon.png */,
 				CADD5310157A9FE400C8E21A /* Default.png */,
@@ -266,6 +271,7 @@
 				CA7F461B156F0F7400447E2A /* PLDFilterTableViewController.m in Sources */,
 				CA84DE8F15711620007151D5 /* PLDDetailViewController.m in Sources */,
 				CADD52F915747D0700C8E21A /* PLDTweetViewController.m in Sources */,
+				CA797219157DC05C000BC537 /* NSArray+Shuffle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
