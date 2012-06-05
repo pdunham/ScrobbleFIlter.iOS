@@ -48,6 +48,11 @@ NSString * tweet;
     }
 }
 
+/*******************************************************************************
+ * @method missinglastFmName  
+ * @abstract handles the case where there's no lastFM user name set   
+ * @description  if there's no last.fm user name set yet (as is the case the first time the app is launched, display a message and disable the tweet button. 
+ *******************************************************************************/
 -(void) missingLastFmName {
     tweetText.text = @"Go to the Settings tab to input your last.fm user name."; 
     [tweetButton setEnabled:NO];

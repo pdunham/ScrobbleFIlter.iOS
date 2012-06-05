@@ -1,5 +1,5 @@
 //
-//  PLDFirstViewController.m
+//  PLDSettingsViewController.m
 //  ScrobbleFIlter
 //
 //  Created by Phillip Dunham on 5/12/12.

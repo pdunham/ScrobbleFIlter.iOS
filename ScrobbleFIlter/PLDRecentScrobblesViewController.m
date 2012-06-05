@@ -1,5 +1,5 @@
 //
-//  PLDSecondViewController.m
+//  PLDRecentScrobblesViewController.m
 //  ScrobbleFIlter
 //
 //  Created by Phillip Dunham on 5/12/12.
@@ -20,6 +20,7 @@
 @implementation PLDRecentScrobblesViewController
 
 @synthesize scrobbleArtists;
+@synthesize infoButton;
 
 PLDDataSingleton * singleton;
 
@@ -37,6 +38,7 @@ PLDDataSingleton * singleton;
 
 - (void)viewDidUnload
 {
+    [self setInfoButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -107,5 +109,19 @@ PLDDataSingleton * singleton;
     
 }
 
+/*******************************************************************************
+ * @method showInfo  
+ * @abstract displays information to the user   
+ * @description  If the user clicks the info icon, instructional information is displayed in an action sheet. 
+ *******************************************************************************/
+- (IBAction)showInfo:(id)sender {
+    NSLog(@"info button clicked");
+    UIActionSheet *msg = [[UIActionSheet alloc] 
+                          initWithTitle:@"These are the artists you've scrobbled in the past 7 days, (not including the ones you've filtered). They are arranged in order of most scrobbled. Click the artist name to go to another screen to add them to your filter.\n"
+                          delegate:nil 
+                          cancelButtonTitle:nil  destructiveButtonTitle:nil 
+                          otherButtonTitles:@"Okay", nil];
+    [msg showInView:self.tableView];
 
+}
 @end

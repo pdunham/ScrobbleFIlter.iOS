@@ -1,5 +1,5 @@
 //
-//  PLDSecondViewController.h
+//  PLDRecentScrobblesViewController.h
 //  ScrobbleFIlter
 //
 //  Created by Phillip Dunham on 5/12/12.
@@ -11,5 +11,7 @@
 @interface PLDRecentScrobblesViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *scrobbleArtists;
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
 
+- (IBAction)showInfo:(id)sender;
 @end
