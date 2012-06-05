@@ -42,6 +42,15 @@ NSString * tweet;
     NSLog(@"registered for notification");
     NSLog(@"current tab bar index: %d", [self.tabBarController selectedIndex]);
     if (singleton.downloadFailed) [self gotErrorNotification:nil];
+    if ([singleton loadlastfmname] == nil) {
+        [self missingLastFmName];
+    }
+}
+
+-(void) missingLastFmName {
+    tweetText.text = @"Go to the Settings tab to input your last.fm user name."; 
+    [tweetButton setEnabled:NO];
+    [splashImage setHidden:YES];
 }
 
 /*******************************************************************************
@@ -128,7 +137,7 @@ NSString * tweet;
                 tweet =  [NSString stringWithFormat:@"I've been listening to %@.",artistOne];        
                 break;
             default:
-                tweet = @"Haven't listened to anything recently.";
+                tweet = @"I haven't listened to anything recently.";
                 break;
         }
         self.tweetText.text = tweet;

@@ -20,12 +20,33 @@ PLDDataSingleton * singleton;
 {
     // Override point for customization after application launch.
     // when the app launches we wnat to try to load all the data we need,so we instantiate the singleton and call methods to populate data
+    [self registerDefaultSettings];
     singleton = [PLDDataSingleton sharedInstance];
     if ([singleton loadlastfmname] != nil) {
         [singleton loadScrobbles];
     }
     [singleton loadFilteredArtists];
     return YES;
+}
+
+/*******************************************************************************
+ * @method registerDefaultSettings  
+ * @abstract ensures that the initial run setting is set   
+ * @description  loads the default settings. Checkes to see if initial run is set. If not, sets it. 
+ *******************************************************************************/
+-(void) registerDefaultSettings {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString * initialrun = [defaults objectForKey:@"Initial Run"];
+    NSLog(@"%@",initialrun);
+    if (initialrun == nil) {
+        NSLog(@"initial run was null");
+        NSString *datestring = [NSString stringWithFormat:@"%@",[NSDate date]];
+        [defaults setObject:datestring forKey:@"Initial Run"];
+        [defaults synchronize];
+        // Set your intial preferences in a .plist
+    }
+    NSLog(@"NSUserDefaults: %@", [[NSUserDefaults standardUserDefaults]
+                                  dictionaryRepresentation]);
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
