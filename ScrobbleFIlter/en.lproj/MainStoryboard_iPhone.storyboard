@@ -84,11 +84,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="bIT-pO-gq9">
+                                <rect key="frame" x="14" y="6" width="18" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="displayInfo:" destination="R0R-nC-FBS" eventType="touchUpInside" id="CA6-Cl-72o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Your Tweet" image="tweet.png" id="XjX-9L-1Eh"/>
                     <connections>
+                        <outlet property="infoButton" destination="bIT-pO-gq9" id="pNS-Nt-sHx"/>
                         <outlet property="splashImage" destination="aYO-ID-ESj" id="vqg-v8-sb1"/>
                         <outlet property="statusLabel" destination="Xt1-jE-bNl" id="Wje-NJ-rpf"/>
                         <outlet property="tweetButton" destination="7lx-fE-RX5" id="Djd-tz-NHw"/>
@@ -321,7 +337,9 @@
         <class className="PLDTweetViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PLDTweetViewController.h"/>
             <relationships>
+                <relationship kind="action" name="displayInfo:"/>
                 <relationship kind="action" name="tweet:"/>
+                <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="splashImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tweetButton" candidateClass="UIButton"/>

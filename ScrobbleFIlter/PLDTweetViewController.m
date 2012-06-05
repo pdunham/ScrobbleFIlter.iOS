@@ -21,6 +21,7 @@
 @synthesize tweetText;
 @synthesize splashImage;
 @synthesize statusLabel;
+@synthesize infoButton;
 
 PLDDataSingleton *singleton;
 NSString * tweet;
@@ -86,6 +87,7 @@ NSString * tweet;
     [self setTweetText:nil];
     [self setSplashImage:nil];
     [self setStatusLabel:nil];
+    [self setInfoButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -143,6 +145,22 @@ NSString * tweet;
         self.tweetText.text = tweet;
         [self.tweetButton setEnabled:YES];
     }
+
+}
+
+/*******************************************************************************
+ * @method showInfo  
+ * @abstract displays information to the user   
+ * @description  If the user clicks the info icon, instructional information is displayed in an action sheet. 
+ *******************************************************************************/
+- (IBAction)displayInfo:(id)sender {
+        NSLog(@"info button clicked");
+        UIActionSheet *msg = [[UIActionSheet alloc] 
+                              initWithTitle:@"To change the artists in this tweet, go to the recent scrobbles tab and pick artists to filter.\n"
+                              delegate:nil 
+                              cancelButtonTitle:nil  destructiveButtonTitle:nil 
+                              otherButtonTitles:@"Okay", nil];
+        [msg showInView:self.view];
 
 }
 

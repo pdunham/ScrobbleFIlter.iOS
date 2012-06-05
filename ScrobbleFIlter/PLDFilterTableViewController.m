@@ -105,7 +105,7 @@ PLDDataSingleton * singleton;
 
 /*******************************************************************************
  * @method showInfo  
- * @abstract displays informatino to the user   
+ * @abstract displays information to the user   
  * @description  If the user clicks the info icon, instructional information is displayed in an action sheet. 
  *******************************************************************************/
 - (IBAction)showInfo:(id)sender {
