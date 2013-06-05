@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Settings View Controller - Settings-->
         <scene sceneID="11">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
                 <viewController title="Settings" id="2" customClass="PLDSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -61,13 +58,13 @@
                         <outlet property="randomSwitch" destination="S9L-RJ-Uh2" id="iQq-pp-hyK"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="650" y="-189"/>
         </scene>
         <!--Tweet View Controller - Your Tweet-->
         <scene sceneID="iWi-aA-1Oh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ENP-CO-IXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="R0R-nC-FBS" customClass="PLDTweetViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JXm-GM-5h7">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -133,13 +130,13 @@
                         <outlet property="tweetText" destination="O4x-ph-Los" id="Wja-Fj-62w"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENP-CO-IXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1193" y="-302"/>
         </scene>
         <!--Recent Scrobbles View Controller - Second-->
         <scene sceneID="13">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
                 <viewController title="Second" id="3" customClass="PLDRecentScrobblesViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6PB-pV-58t">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -188,13 +185,13 @@
                         <outlet property="infoButton" destination="Xja-UH-a4S" id="TXG-8U-TIJ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="767" y="886"/>
         </scene>
         <!--Navigation Controller - Recent Scrobbles-->
         <scene sceneID="8J4-gW-TfS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qw7-A1-VIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="dLN-lR-Tsc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Recent Scrobbles" image="scrobble.png" id="S3f-w3-M0G"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="aFh-bR-arU">
@@ -204,13 +201,13 @@
                         <segue destination="3" kind="relationship" relationship="rootViewController" id="fRJ-Om-f72"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qw7-A1-VIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="281" y="886"/>
         </scene>
         <!--Filter Table View Controller - Filtered Artists-->
         <scene sceneID="whX-Ee-krQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n7i-Fw-Foj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="hdS-dx-17B" customClass="PLDFilterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="10" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1kn-E8-Dre">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -256,13 +253,13 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7i-Fw-Foj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1632" y="174"/>
         </scene>
         <!--Detail View Controller - Artist-->
         <scene sceneID="zLU-4A-dnd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1m-lu-71k" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="vG1-Xf-p5N" customClass="PLDDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WJT-6r-kDD">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -302,13 +299,13 @@
                         <outlet property="filterButton" destination="fec-EL-kxU" id="cEY-4w-9iL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1m-lu-71k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1593" y="942"/>
         </scene>
         <!--Navigation Controller - Filter List-->
         <scene sceneID="p95-DD-2vc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VUW-a9-riB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="pXt-9e-5lh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Filter List" image="filter.png" id="Luq-QK-kHi"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Sli-cL-FqU">
@@ -318,13 +315,13 @@
                         <segue destination="hdS-dx-17B" kind="relationship" relationship="rootViewController" id="dWz-rW-Xh5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUW-a9-riB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1138" y="291"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
                 <tabBarController id="4" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
@@ -339,6 +336,7 @@
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="i3G-IL-5c7"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="160" y="135"/>
         </scene>

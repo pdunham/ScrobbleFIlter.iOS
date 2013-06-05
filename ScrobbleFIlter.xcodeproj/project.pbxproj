@@ -10,7 +10,7 @@
 		CA79720B157DB755000BC537 /* hi-res-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA79720A157DB755000BC537 /* hi-res-icon.png */; };
 		CA79720E157DB945000BC537 /* hi-res-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA79720D157DB945000BC537 /* hi-res-icon.png */; };
 		CA797210157DB959000BC537 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA79720F157DB959000BC537 /* Default@2x.png */; };
-		CA797219157DC05C000BC537 /* NSArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = CA797218157DC05C000BC537 /* NSArray+Shuffle.m */; };
+		CA797220157FF0A3000BC537 /* NSArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79721F157FF0A3000BC537 /* NSArray+Shuffle.m */; };
 		CA7F461B156F0F7400447E2A /* PLDFilterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7F461A156F0F7400447E2A /* PLDFilterTableViewController.m */; };
 		CA84DE8F15711620007151D5 /* PLDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA84DE8E15711620007151D5 /* PLDDetailViewController.m */; };
 		CAB0B94A157AAB39000AABBA /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB0B949157AAB39000AABBA /* filter.png */; };
@@ -21,7 +21,6 @@
 		CADD53031577999D00C8E21A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADD53021577999D00C8E21A /* Accounts.framework */; };
 		CADD5305157799A700C8E21A /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADD5304157799A700C8E21A /* Twitter.framework */; };
 		CADD530715782C0F00C8E21A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CADD530615782C0F00C8E21A /* Settings.bundle */; };
-		CADD5309157A93C100C8E21A /* scrobblefiltericon.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD5308157A93C100C8E21A /* scrobblefiltericon.png */; };
 		CADD530B157A957700C8E21A /* scrobblefiltericon.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD530A157A957700C8E21A /* scrobblefiltericon.png */; };
 		CADD530F157A9F3000C8E21A /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD530E157A9F3000C8E21A /* splash.png */; };
 		CADD5311157A9FE400C8E21A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD5310157A9FE400C8E21A /* Default.png */; };
@@ -45,8 +44,8 @@
 		CA79720A157DB755000BC537 /* hi-res-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hi-res-icon.png"; sourceTree = "<group>"; };
 		CA79720D157DB945000BC537 /* hi-res-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hi-res-icon.png"; sourceTree = "<group>"; };
 		CA79720F157DB959000BC537 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		CA797217157DC05C000BC537 /* NSArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shuffle.h"; sourceTree = "<group>"; };
-		CA797218157DC05C000BC537 /* NSArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shuffle.m"; sourceTree = "<group>"; };
+		CA79721E157FF0A3000BC537 /* NSArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shuffle.h"; sourceTree = "<group>"; };
+		CA79721F157FF0A3000BC537 /* NSArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shuffle.m"; sourceTree = "<group>"; };
 		CA7F4619156F0F7400447E2A /* PLDFilterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDFilterTableViewController.h; sourceTree = "<group>"; };
 		CA7F461A156F0F7400447E2A /* PLDFilterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDFilterTableViewController.m; sourceTree = "<group>"; };
 		CA84DE8D15711620007151D5 /* PLDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDDetailViewController.h; sourceTree = "<group>"; };
@@ -61,7 +60,6 @@
 		CADD53021577999D00C8E21A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		CADD5304157799A700C8E21A /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		CADD530615782C0F00C8E21A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		CADD5308157A93C100C8E21A /* scrobblefiltericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrobblefiltericon.png; path = ../scrobblefiltericon.png; sourceTree = "<group>"; };
 		CADD530A157A957700C8E21A /* scrobblefiltericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrobblefiltericon.png; sourceTree = "<group>"; };
 		CADD530E157A9F3000C8E21A /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ScrobbleFIlter/splash.png; sourceTree = "<group>"; };
 		CADD5310157A9FE400C8E21A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -106,14 +104,11 @@
 		CAE1B22C155F6A7D0041241E = {
 			isa = PBXGroup;
 			children = (
-				CA797217157DC05C000BC537 /* NSArray+Shuffle.h */,
-				CA797218157DC05C000BC537 /* NSArray+Shuffle.m */,
 				CA79720F157DB959000BC537 /* Default@2x.png */,
 				CA79720D157DB945000BC537 /* hi-res-icon.png */,
 				CADD5310157A9FE400C8E21A /* Default.png */,
 				CADD530E157A9F3000C8E21A /* splash.png */,
 				CADD530A157A957700C8E21A /* scrobblefiltericon.png */,
-				CADD5308157A93C100C8E21A /* scrobblefiltericon.png */,
 				CAE1B241155F6A7D0041241E /* ScrobbleFIlter */,
 				CAE1B23A155F6A7D0041241E /* Frameworks */,
 				CAE1B238155F6A7D0041241E /* Products */,
@@ -143,6 +138,8 @@
 		CAE1B241155F6A7D0041241E /* ScrobbleFIlter */ = {
 			isa = PBXGroup;
 			children = (
+				CA79721E157FF0A3000BC537 /* NSArray+Shuffle.h */,
+				CA79721F157FF0A3000BC537 /* NSArray+Shuffle.m */,
 				CADD530615782C0F00C8E21A /* Settings.bundle */,
 				CAE1B24A155F6A7D0041241E /* PLDAppDelegate.h */,
 				CAE1B24B155F6A7D0041241E /* PLDAppDelegate.m */,
@@ -242,7 +239,6 @@
 				CAE1B25E155F6A7D0041241E /* second.png in Resources */,
 				CAE1B260155F6A7D0041241E /* second@2x.png in Resources */,
 				CADD530715782C0F00C8E21A /* Settings.bundle in Resources */,
-				CADD5309157A93C100C8E21A /* scrobblefiltericon.png in Resources */,
 				CADD530B157A957700C8E21A /* scrobblefiltericon.png in Resources */,
 				CADD530F157A9F3000C8E21A /* splash.png in Resources */,
 				CADD5311157A9FE400C8E21A /* Default.png in Resources */,
@@ -271,7 +267,7 @@
 				CA7F461B156F0F7400447E2A /* PLDFilterTableViewController.m in Sources */,
 				CA84DE8F15711620007151D5 /* PLDDetailViewController.m in Sources */,
 				CADD52F915747D0700C8E21A /* PLDTweetViewController.m in Sources */,
-				CA797219157DC05C000BC537 /* NSArray+Shuffle.m in Sources */,
+				CA797220157FF0A3000BC537 /* NSArray+Shuffle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
